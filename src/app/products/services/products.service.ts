@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Gender, Product, ProductResponse } from '../interfaces/product.interface';
 import { delay, forkJoin, map, Observable, ObservableLike, of, switchMap, tap } from 'rxjs';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { User } from '../../auth/interfaces/user.interface';
 
 const baseUrl = environment.baseUrl;

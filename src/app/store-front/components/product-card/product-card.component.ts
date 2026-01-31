@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { Product } from '../../../products/interfaces/product.interface';
 import { CommonModule } from '@angular/common';
@@ -12,10 +12,4 @@ import { ProductImagePipe } from '../../../products/pipes/product-image.pipe';
 export class ProductCardComponent {
 
   product = input.required<Product>();
-
-  imageUrl = computed(()=>{
-    return `http://localhost:3000/api/files/product/${this.product().images[0]}`;
-  });
-
-
 }
