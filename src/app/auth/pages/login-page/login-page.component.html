@@ -1,0 +1,53 @@
+<form class="flex flex-col gap-2" [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+>
+  <label class="input">
+    <svg class="h-[1em] opacity-50"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round">
+    <path d="M4 4h16v16H4z"></path>
+    <path d="M22 6l-10 7L2 6"></path>
+  </svg>
+    <input type="text" class="grow" placeholder="Correo Electronico" formControlName="email"/>
+  </label>
+  <label class="input">
+    <svg class="h-[1em] opacity-50"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round">
+    <circle cx="7.5" cy="15.5" r="5.5"></circle>
+    <path d="M21 2l-9.6 9.6"></path>
+    <path d="M15.5 7.5l1.5 1.5"></path>
+  </svg>
+    <input type="password" class="grow" placeholder="Contraseña" formControlName="password"/>
+  </label>
+  <button type="submit" class="btn btn-secondary">Login</button>
+
+
+  <p class="text-slate-700 ">
+    ¿No tienes cuenta?
+    <a routerLink="/auth/register" class="text-secondary hover:underline"
+    >Crea una aqui</a
+    >
+  </p>
+
+
+</form>
+
+@if (hasError()) {
+  <div role="alert" class="alert alert-error animate-fadeIn fixed bottom-5 right-5 w-52">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span>Por favor revise la informacion ingresada.</span>
+  </div>
+}
